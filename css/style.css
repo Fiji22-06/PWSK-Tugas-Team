@@ -91,6 +91,25 @@ section h2::after {
     overflow: hidden;
     width: 250px;
     max-width: 100%;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+#kategori-list li:nth-child(1) { animation-delay: 0.1s; }
+#kategori-list li:nth-child(2) { animation-delay: 0.2s; }
+#kategori-list li:nth-child(3) { animation-delay: 0.3s; }
+#kategori-list li:nth-child(4) { animation-delay: 0.4s; }
+#kategori-list li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #kategori-list li::before {
