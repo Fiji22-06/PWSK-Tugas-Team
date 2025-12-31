@@ -1,49 +1,49 @@
-/* Reset CSS */
-* {
+/* reset css */
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body{
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #667eea, #764ba2);
     min-height: 100vh;
     padding: 20px;
 }
 
-.container {
+.container{
     max-width: 1200px;
     margin: 0 auto;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     overflow: hidden;
 }
 
-/* Header */
-header {
+/* header */
+header{
     background: linear-gradient(to right, #667eea, #764ba2);
     color: white;
     padding: 30px;
     text-align: center;
 }
 
-header h1 {
+header h1{
     font-size: 2em;
     margin-bottom: 10px;
 }
 
-header p {
+header p{
     font-size: 1em;
 }
 
-section {
+section{
     padding: 40px 30px;
 }
 
-/* Judul Section */
-section h2 {
+/* judul section */
+section h2{
     color: #333;
     font-size: 1.8em;
     margin-bottom: 30px;
