@@ -1,42 +1,28 @@
-// Fetch data kategori dari file JSON
-console.log('🚀 Memulai fetch data kategori...');
-
+// ambil data dari json
 fetch("data/kategori.json")
-    .then(response => {
-        console.log('📡 Response diterima:', response.status);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        console.log('✅ Data kategori berhasil dimuat:', data);
         const kategoriList = document.getElementById("kategori-list");
         
-        // Hapus loading message
+        // hapus loading
         kategoriList.innerHTML = '';
-        console.log('🧹 Loading message dihapus');
         
-        // Tambahkan setiap kategori ke dalam list
-        data.kategori.forEach((item, index) => {
+        // tampilin semua kategori
+        data.kategori.forEach(item => {
             const li = document.createElement("li");
             li.textContent = item;
             
-            // Tambahkan event listener untuk interaksi
-            li.addEventListener('click', () => {
-                console.log(`👆 Kategori diklik: ${item}`);
-                alert(`Anda memilih kategori: ${item}`);
+            // kalo di klik
+            li.addEventListener('click', function() {
+                alert('Anda memilih kategori: ' + item);
             });
             
             kategoriList.appendChild(li);
-            console.log(`📚 Kategori ${index + 1} ditambahkan: ${item}`);
         });
-        
-        console.log('🎉 Semua kategori berhasil ditampilkan!');
     })
     .catch(error => {
-        console.error("❌ Gagal Memuat Data Kategori:", error);
+        console.log("Error:", error);
         const kategoriList = document.getElementById("kategori-list");
-        kategoriList.innerHTML = '<li class="error">❌ Gagal memuat data kategori. Silakan refresh halaman.</li>';
+        kategoriList.innerHTML = '<li class="error">Gagal memuat data</li>';
     });
     
